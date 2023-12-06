@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+</head>
+<body>
+    
+    {% if blog is not None %}
+    <h2>{{ blog.title }}</h2>
+    <p>{{ blog.description }}</p>
+    <img src="{{ blog.image.url }}" alt="">
+
+    <a href="{% url 'delete_blog' blog.id %}" style="color: red;">Удалить</a>
+    <a href="{% url 'update_blog' blog.id %}" style="color: green;">Обновить</a>
+    {% else %}
+    <h1>Not Found Object</h1>
+    {% endif %}
+
+</body>
+</html>

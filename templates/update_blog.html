@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Blog</title>
+</head>
+<body>
+
+    
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="title">Название:</label>
+        <input type="text" name="title" id="" required value="{{ blog.title }}">
+
+        <label for="description">Описание:</label>
+        <textarea name="description" id="" cols="30" rows="10" required>{{ blog.description }}</textarea>
+
+        <label for="image">Фото:</label>
+        <input type="file" name="image" id="" required value="{{ blog.image.url }}">
+
+        <button type="submit">Обновить пост</button>
+    </form>
+
+</body>
+</html>
